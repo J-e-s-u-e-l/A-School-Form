@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --body-font-size: clamp(.9rem, 3vw, 1rem);
+}
+body{
+    box-sizing: border-box;
+}
+/* ============================================= MAIN SECTION ============================================= */
+.form-control, a, p{
+    font-size: var(--body-font-size);
+}
+main{
+    display: grid;
+    place-items: center;
+    position: relative;
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100%;
+    padding-block: 3.125rem;
+}
+main::before{
+    content: "";
+    background: 70%/cover no-repeat url('/img/regPage_bg.jpeg'), hsl(0, 0%, 75%);
+    filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+/* ============================================= FORM SECTION ============================================= */
+.form-section{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-width: 40rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+.reg-form > *{
+    width: 100%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+    box-sizing: border-box;
+    width: 100%;
+}
+.logo{
+    margin: 0 auto;
+}
+.logo img{
+    width: clamp(5rem, 15vw, 8rem);
+}
+.reg-form{
+    box-sizing: border-box;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 10% 8%;
+    border-radius: 5px;
+}
+.reg-form h1{
+    font-size: clamp(1.2rem, 4vw, 2rem);
+}
+input{
+    all: initial;
+}
+.form-control{
+    background-color: hsl(0, 0%, 96%);
+    border-radius: 5px;
+    /* padding: 0.625rem 1.875rem; */
+    padding-block: calc(var(--body-font-size) * 1);
+    padding-inline: calc(var(--body-font-size) * 2);
+}
+.form-control:focus-visible{
+    border: solid 1px hsl(0, 0%, 0%);
+}
+.form-control::placeholder, .option-placeholder{
+    color: hsl(0, 0%, 65%);
+}
+input[type="date"]{
+    cursor: text;
+}
+select{
+    /* all: initial; */
+    /* appearance: none; */
+    border: none;
+    cursor: pointer;
+}
+select:focus-visible{
+    outline: none;
+}
+button[type="submit"]{
+    color: #ffffff;
+    background-color: #ff5e13;
+    padding: 0.625rem;
+    width: 7rem;
+    border: none;
+    box-shadow: 0 0 7px 0 hsl(0, 0%, 0%, .35);
+    border-radius: 2px;
+    cursor: pointer;
+}
+button[type="submit"]:hover{
+    transition: .3s scale ease-in-out;
+    scale: .97;
+}
+/* ============================================= FORM FOOTER SECTION ============================================= */
+.form-footer{
+    margin-top: 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+}
+.login-referral a{
+    text-decoration: none;
+    color: hsl(240, 50%, 50%);
+}
+.login-referral a:hover{
+    color: hsl(240, 50%, 30%);
+    /* color: red; */
+}
+.external-app-icons{
+    display: inline-flex;
+    gap: 0.75rem;
+}
+.external-app-icons > div:hover{
+    transition: scale .5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    scale: 1.5;
+}
+.external-app-icons > div a{
+    text-decoration: none;
+}
+/* ============================================= MEDIA QUERIES ============================================= */
+@media screen and (max-width:480px){                /* Mobile devices */
+    .form-section{
+        max-width: 25rem;
+        width: 90%;
+    }
+}
+@media screen and (min-width:481px) and (max-width: 768px){                /* ipads, Tablets */
+    .form-section{
+        max-width: 30rem;
+        width: 90%;
+    }
+}
